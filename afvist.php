@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta name="robots" content="noindex">
-<title>registre</title>
+<title>Registration denied!</title>
 <style>
 html {
 	height:100%;
