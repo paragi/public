@@ -1,0 +1,15 @@
+{
+"name":"Temeperature of well water",
+"set sensitivity":40,
+"get sensitivity":40,
+"device":"/usb/device_uk1104",
+"unit id":"RW",
+"max_data_age":600,
+"type":"level",
+"present":"gauge color=tempin low=15 high=30 precission=3 prefix=\u00B0C show_value",
+"cmd":{
+   "get":[["ch1.setmode(4)","ch1.settempres(12)","ch1.gettemp"],20]
+  ,"status":[["status"],20]
+  ,"diagnostic":[["diagnostic"],40]
+  }
+}

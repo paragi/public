@@ -1,0 +1,14 @@
+{
+"unit":"AT0M,BR",
+"name":"light1",
+"sensitivity":40,
+"type":"switch",
+"units":"lumen",
+"level 0":"0",
+"level 100":"100",
+"level on":"100",
+"precision":"+-10%",
+"description":"Light dimmer",
+"max data age":10,
+"capabilities":"on,off,n[0-100]%,R[0-600]"
+}

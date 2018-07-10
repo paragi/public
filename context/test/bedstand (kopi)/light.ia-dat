@@ -1,0 +1,18 @@
+{
+"device":"/device/dummy",
+"unit_id":"GPIO12",
+"type":"switch",
+"max_data_age":130,
+"present":"",
+"icon":"bedstand-light:%s.png",
+"cmd":{
+   "get":[["get"],20]
+  ,"status":[["status"],20]
+  ,"diagnostic":[["diagnostic"],40]
+  ,"on":[["set on"],40]
+  ,"off":[["set off"],40]
+  ,"init":[["status"],20]
+  }
+}
+
+

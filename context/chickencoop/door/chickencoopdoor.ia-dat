@@ -1,0 +1,16 @@
+{
+"name":"chickencoopdoor",
+"set sensitivity":40,
+"get sensitivity":40,
+"device":"device/usb/generic_bit",
+"device id":"1-1.3.4:067b:2305",
+"type":"switch",
+"max data age":130,
+"cmd":{
+   "on":["reset 1"]
+  ,"off":["set 1"]
+  ,"get":["get 1"]
+  ,"status":["status"]
+  ,"diagnostic":["diagnostic"]
+  }
+}

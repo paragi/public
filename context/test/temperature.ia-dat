@@ -1,0 +1,13 @@
+{
+"device":"device/dummy",
+"max_data_age":130,
+"present":"bar color=tempin low=15 high=30 precission=3",
+"cmd":{
+   "get":[["get"],20]
+  ,"status":[["status"],20]
+  ,"diagnostic":[["diagnostic"],40]
+  ,"on":[["set on"],40]
+  ,"off":[["set off"],40]
+  ,"init":[["status"],20]
+  }
+}

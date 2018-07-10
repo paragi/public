@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<h1>This is Alice</h1>
+<button type="button" id="backButton" onclick="back();">Back</button>
+<a href="charlie.php">Go to charlie</a>
+<script>
+// Load or create a history array
+var pageHistory = JSON.parse(sessionStorage.pageHistory || '[]');
+
+// Load or create a history array
+var pageHistory = JSON.parse(sessionStorage.pageHistory || '[]');
+
+// Find this page in history
+var thisPageIndex = pageHistory.indexOf(window.location.pathname);
+if( thisPageIndex < 0){
+  // If this page was not in the history, add it to history
+  pageHistory.push(window.location.pathname);
+  thisPageIndex = pageHistory.length -1;
+  
+  // If this page index is not at the top, check that the referrer is the next 
+  // page in history. (Back page used) If not, wipe history beyond this point.
+}else if(thisPageIndex < pageHistory.length -1){
+  // Extract pathname of the referring page
+  var referrer = document.referrer.match(/.+?\:\/\/.+?(\/.+?)(?:#|\?|$)/); 
+  if(Array.isArray(referrer)) var pathname = referrer[1];
+    
+console.log("referrer",referrer);  
+
+  // If referring page is not this page itself or the next forward page (back button used)
+  // wipe the forward history
+  if(pageHistory[thisPageIndex] != pathname
+    && pageHistory[thisPageIndex+1] != pathname) 
+    for(; thisPageIndex < pageHistory.length -1;)
+      pageHistory.pop();
+}
+console.log("thisPageIndex",thisPageIndex);  
+
+// Disable back button if this is the first page
+if(thisPageIndex < 1) 
+  document.getElementById("backButton").disabled = true;
+  
+// Store history array   
+sessionStorage.pageHistory = JSON.stringify(pageHistory);
+
+function back(){
+  if(thisPageIndex > 0 )
+    window.location.href = pageHistory[thisPageIndex - 1];
+  else
+    alert("no whare to go");    
+}
+
+window.history.back = back; // no work!
+console.log("window.location",window.location);  
+console.log("sessionStorage",sessionStorage);
+</script>
+</body>
+</html>
+
+

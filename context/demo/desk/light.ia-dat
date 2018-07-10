@@ -1,0 +1,14 @@
+{
+"device":"device/rpi/gpio_pin",
+"unit id":"gpio23",
+"type":"switch",
+"icon":"desk_light:%s.png",
+"cmd":{
+   "get":[["get"],20]
+  ,"status":[["status"],20]
+  ,"diagnostic":[["diagnostic"],40]
+  ,"on":[["set on"],40]
+  ,"off":[["set off"],40]
+  ,"toggle":[["toggle"],40]  
+  }
+}

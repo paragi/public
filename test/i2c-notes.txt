@@ -1,0 +1,53 @@
+/* i2c-dev.c
+ * After opening an instance of this character special file, a file
+ * descriptor starts out associated only with an i2c_adapter (and bus).
+ *
+ * Using the I2C_RDWR ioctl(), you can then *immediately* issue i2c_msg
+ * traffic to any devices on the bus used by that adapter.  That's because
+ * the i2c_msg vectors embed all the addressing information they need, and
+ * are submitted directly to an i2c_adapter.  However, SMBus-only adapters
+ * don't support that interface.
+ *
+ * To use read()/write() system calls on that file descriptor, or to use
+ * SMBus interfaces (and work with SMBus-only hosts!), you must first issue
+ * an I2C_SLAVE (or I2C_SLAVE_FORCE) ioctl.  That configures an anonymous
+ * (never registered) i2c_client so it holds the addressing information
+ * needed by those system calls and by this SMBus interface.
+ */
+ 
+ 
+i2c-dev tilføjer private_data struct til file descriptoren. 
+Måske er det muligt at få adgang til at skrive adressen direkte ind i file descriptoren?
+
+ 
+ 
+http://stackoverflow.com/questions/5600811/fopen-and-getting-system-file-descriptor
+
+I want to get a system file descriptor of the returned resource when I open a file using open. I assume the descriptor is an INT value which is normally inside /dev/fd/
+
+I know that I can read from the descriptor by doing something like:
+
+fread("php://fd/$descriptor", $buflen);
+But now I want to get the descriptor for a resource opened by PHP's fopen(). Is there a way?
+
+up vote
+2
+down vote
+This is a rather hacky way around it but it works!
+
+function fd($realpath) {
+  $dir = '/proc/self/fd/';
+  if ($dh = opendir($dir)) {
+      while (($file = readdir($dh)) !== false) {
+          $filename = $dir . $file;
+          if (filetype($filename) == 'link' && realpath($filename) == $realpath) {
+            closedir($dh);
+            return $file;
+          }
+      }
+      closedir($dh);
+  }
+  return FALSE;
+}
+
+

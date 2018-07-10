@@ -1,0 +1,20 @@
+{
+"name":"light1",
+"set sensitivity":40,
+"get sensitivity":40,
+"device":"device/dummy",
+"device id":"RW",
+"type":"switch",
+"max data age":-1,
+"cmd":{
+   "set %":["set %"]
+  ,"on":["set on"]
+  ,"off":["set off"]
+  ,"get":["get"]
+  ,"status":["status"]
+  ,"diagnostic":["diagnostic"]
+  }
+}
+
+
+

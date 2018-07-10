@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+<canvas id="myCanvas" width="800" height="600">>Your browser does not support the canvas tag.</canvas>
+<script>
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+var cursorOn=1,cursX=10, cursY=30;
+var textColor ="lawngreen";
+
+function displayTerm(){
+ ctx.fillStyle  = "black";
+ ctx.fillRect(0,0,500,500);
+ ctx.fillStyle = textColor;
+ ctx.font = "12px Courier New";
+ type("JESTER/UIX 1.9.4  starting up ...");
+ newline(2);
+ type("Login: "); 
+}
+
+function newline(n){
+ cursX=10; cursY+=15*n;
+}
+
+function type(string){
+ ctx.fillText(string,cursX,cursY);
+ cursX+=string.length*8;
+}
+
+function flashCursor(){
+ if(cursorOn==1) {ctx.fillStyle = textColor; ctx.fillRect(cursX,cursY-11,7,14);}
+ else {cursorOff();}
+ cursorOn=-cursorOn;
+}
+
+function cursorOff(){
+ ctx.fillStyle = "black";
+ ctx.fillRect(cursX,cursY-11,7,14);
+}
+
+
+function doKeyDown(evt){
+ cursorOff();
+ if(evt.keyCode==13){ newline(1); return;}
+ ctx.fillStyle = textColor;
+ ctx.fillText(evt.keyCode,cursX,cursY);
+ cursX+=8;
+ if(cursX>480) {newline(1);}
+}
+
+displayTerm();
+window.addEventListener('keydown',doKeyDown,true);
+setInterval('flashCursor()',500);
+
+</script>
+</body>
+</html>

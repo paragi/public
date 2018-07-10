@@ -1,0 +1,14 @@
+{
+   "name":"Relay board 1"
+  ,"device":"device/usb/generic_byte"
+  ,"unit id":"1-1.5:067b:2305"
+  ,"max_data_age":0
+  ,"type":"switch"
+  ,"cmd":{
+     "get":[["get"],60]
+    ,"status":[["get"],60]
+    ,"diagnostic":[["diagnostic"],60]
+    ,"set":[["set *"],80]
+    ,"init":[["mask 11111111"],80]
+  }
+}

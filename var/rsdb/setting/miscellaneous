@@ -1,0 +1,11 @@
+{"show php errors":
+  {
+     "text":"Show PHP errors on screen"
+    ,"value":"on"
+  }
+  ,"register to connect service":
+    {
+       "text":"Register with connect service on startup"
+      ,"value":"on"
+    }
+}

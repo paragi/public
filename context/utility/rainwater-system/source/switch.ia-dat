@@ -1,0 +1,18 @@
+{
+"device":"device/usb/generic_bit",
+"unit id":"1-1.5:067b:2305",
+"max_data_age":0,
+"type":"switch",
+"cmd":{
+   "get":[["get 2"],20]
+  ,"status":[["get 2"],20]
+  ,"diagnostic":[["diagnostic"],40]
+  ,"reset":[["reset 2"],40]
+  ,"set":[["set 2"],40]
+  ,"on":[["set 2"],40]
+  ,"off":[["reset 2"],40]
+  ,"toggle":[["toggle 2"],40]
+  ,"init":[["invert 2"],60]
+  },
+"reply":{"1":"on","0":"off"} 
+}
