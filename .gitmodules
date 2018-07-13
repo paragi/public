@@ -1,0 +1,6 @@
+[submodule "device"]
+	path = device
+	url = https://github.com/paragi/sc-interface
+[submodule "theme"]
+	path = theme
+	url = https://github.com/paragi/sc-theme
