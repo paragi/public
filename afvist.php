@@ -17,7 +17,7 @@ html {
 body{
 	margin: 0px;
 	background-color: #460918;
-	background-image: url(background.jpg); 
+	background-image: url(background.jpg);
 	background-repeat: no-repeat;
 	background-size:100% 100%;
 	inner-height:100%;
@@ -27,7 +27,7 @@ body{
 div{
 	position: static;
 	border:2px solid #f0d988;
-	padding:20px; 
+	padding:20px;
 	border-radius:10px;
 	background-color:rgba(50,10,10,0.5);
 	box-shadow: 3px 3px 3px #291b2c;
@@ -43,7 +43,7 @@ button{
 <body>
 
 <div>
-This is a private site. If you don't have a legitimate reason to be here, Please refrain from using it any further.<br><br>
+This is a private site. If you don't have a legitimate reason to be here, Please refrain from using it any further.z <br><br>
 Kode <?php print "<pre>".$_GET['kode']."</pre>"; ?>
 
 </div>
@@ -52,4 +52,3 @@ Kode <?php print "<pre>".$_GET['kode']."</pre>"; ?>
 </div>
 </body>
 </html>
-
