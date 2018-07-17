@@ -43,7 +43,7 @@ button{
 <body>
 
 <div>
-This is a private site. If you don't have a legitimate reason to be here, Please refrain from using it any further.q <br><br>
+This is a private site. If you don't have a legitimate reason to be here, Please refrain from using it any further.p <br><br>
 Kode <?php print "<pre>".$_GET['kode']."</pre>"; ?>
 
 </div>
