@@ -15,7 +15,7 @@ class SessionHandler implements \SessionHandlerInterface{
     $this->prefix = __DIR__ . DIRECTORY_SEPARATOR . "var";
     if (!is_dir($this->prefix))
       mkdir($this->prefix, 0777);
-    $this->prefix += DIRECTORY_SEPARATOR . "session_";
+    $this->prefix .= DIRECTORY_SEPARATOR . "session_";
 
     return true;
   }
